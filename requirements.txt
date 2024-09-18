@@ -1,6 +1,6 @@
-streamlit
-opencv-python
-numpy
-Pillow
-matplotlib
-scipy
+streamlit==1.23.1  # Adjust version if necessary based on your environment
+opencv-python==4.5.5.62  # OpenCV for image processing
+numpy==1.21.6  # For numerical operations
+Pillow==9.2.0  # To handle image file uploads
+matplotlib==3.5.2  # For plotting and visualizing images
+scipy==1.8.1  # Used for potential distance-based operations
