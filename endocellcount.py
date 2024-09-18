@@ -5,7 +5,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 # Title of the app
-st.title('Honeycomb Cell Detection and Counting')
+st.title('Cornea Endothelial Cell Detection and Counting')
 
 # Upload the image file
 uploaded_file = st.file_uploader("Upload an image of the cell culture", type=['png', 'jpg', 'jpeg', 'tif'])
@@ -14,7 +14,7 @@ uploaded_file = st.file_uploader("Upload an image of the cell culture", type=['p
 dilation_size = st.slider("Select Border Thickness (Dilation Iterations)", min_value=1, max_value=5, value=2)
 
 # Slider for dilation size after the final closed gaps step
-final_dilation_size = st.slider("Skeleton Dilation (Final Closed Gaps)", min_value=1, max_value=10, value=2)
+final_dilation_size = st.slider("Skeleton Dilation (Final Closed Gaps)", min_value=1, max_value=10, value=10)
 
 # Function to enhance contrast
 def enhance_contrast(image):
@@ -82,6 +82,6 @@ if uploaded_file is not None:
     
     # Step 4: Count honeycomb cells and draw contours
     image_with_contours, cell_count = count_honeycomb_cells(image, dilated_skeleton)
-    plot_image(f"Honeycomb Cells (Count: {cell_count})", image_with_contours, cmap=None)
+    plot_image(f"Cornea Endothelial Cells (Count: {cell_count})", image_with_contours, cmap=None)
 
-    st.write(f"Number of detected honeycomb cells: {cell_count}")
+    st.write(f"Number of detected Cornea Endothelial Cells cells: {cell_count}")
